@@ -1,5 +1,3 @@
-import process from 'process'
-
 const parseArgs = () => {
     const result = process.argv.slice(2)
         .map((arg, index, args) => {
