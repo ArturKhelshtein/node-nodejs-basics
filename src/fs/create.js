@@ -8,7 +8,7 @@ const create = async () => {
 
     try {
         await promises.access(filePath);
-        console.error('FS operation failed');
+        throw new Error('FS operation failed');
     } catch (error) {
         if (error.code === 'ENOENT' && error.path === filePath) {
             await promises.writeFile(filePath, 'I am fresh and young');
