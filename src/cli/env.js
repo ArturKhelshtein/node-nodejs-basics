@@ -1,3 +1,5 @@
+import process from 'process'
+
 const parseEnv = () => {
     const rssVariables = Object.entries(process.env)
         .filter(([key]) => key.startsWith('RSS_'))
