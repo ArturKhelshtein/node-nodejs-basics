@@ -12,6 +12,9 @@ const rename = async () => {
         throw new Error('FS operation failed, already exist');
     } catch (error) {
         if (error.code !== 'ENOENT') {
+            if (error.message === 'FS operation failed, already exist') {
+                throw error;
+            }
             throw new Error('FS operation failed, unexpected');
         }
     }
