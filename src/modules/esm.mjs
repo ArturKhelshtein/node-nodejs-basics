@@ -2,13 +2,16 @@ import path from 'path';
 import { release, version } from 'os';
 import { createServer as createServerHttp } from 'http';
 import { fileURLToPath } from 'url';
-
-import a from './files/a';
-import b from './files/b';
-import c from './files/c';
+import { createRequire } from 'module';
+import { promises } from 'fs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const require = createRequire(import.meta.url);
+const a = JSON.parse(await promises.readFile(path.join(__dirname, 'files', 'a.json'), 'utf-8'));
+const b = JSON.parse(await promises.readFile(path.join(__dirname, 'files', 'b.json'), 'utf-8'));
+const c = require('./files/c.cjs')
+
 const random = Math.random();
 
 let unknownObject;
