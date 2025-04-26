@@ -1,3 +1,7 @@
 # Node.js basics
 
-## !!! Please don't submit Pull Requests to this repository !!!
+## This is a study repo
+
+## Task link
+
+<https://github.com/AlreadyBored/nodejs-assignments/blob/main/assignments/nodejs-basics/assignment.md>
